@@ -25,11 +25,11 @@ public class GameInitSystem : IEcsInitSystem
         player.Get<InputEventComponent>();
 
         ref var movableComponent = ref player.Get<MovableComponent>();
-        movableComponent.MoveSpeed = _playerInitData.DefaultSpeed;
-        movableComponent.Transform = unitActor.transform;
+        movableComponent.moveSpeed = _playerInitData.DefaultSpeed;
+        movableComponent.transform = unitActor.transform;
 
         ref var animationsComponent = ref player.Get<AnimatedCharacterComponent>();
-        animationsComponent.Animator = unitActor.Animator;
+        animationsComponent.animator = unitActor.Animator;
 
         var enemySpawnPosition = _spawnPoint.position + Vector3.one * Random.Range(-2f, 2f);
         enemySpawnPosition.y = 0;
@@ -43,11 +43,11 @@ public class GameInitSystem : IEcsInitSystem
         var enemy = _ecsWorld.NewEntity();
 
         ref var enemyMovableComponent = ref enemy.Get<MovableComponent>();
-        enemyMovableComponent.MoveSpeed = _enemyInitData.DefaultSpeed;
-        enemyMovableComponent.Transform = unitActor.transform;
+        enemyMovableComponent.moveSpeed = _enemyInitData.DefaultSpeed;
+        enemyMovableComponent.transform = unitActor.transform;
 
         ref var enemyAnimationsComponent = ref enemy.Get<AnimatedCharacterComponent>();
-        enemyAnimationsComponent.Animator = unitActor.Animator;
+        enemyAnimationsComponent.animator = unitActor.Animator;
 
         ref var followTarget = ref enemy.Get<FollowComponent>();
         followTarget.target = target;

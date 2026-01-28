@@ -13,7 +13,7 @@ public class AnimatedCharacterSystem : IEcsRunSystem
             ref var animatedCharacter = ref _animatedFilter.Get1(entity);
             ref var movableComponent = ref _animatedFilter.Get2(entity);
 
-            animatedCharacter.Animator.SetBool(IsMoving, movableComponent.IsMoving);
+            animatedCharacter.animator.SetBool(IsMoving, movableComponent.isMoving);
         }
     }
 }

@@ -18,17 +18,18 @@ public class FollowSystem : IEcsRunSystem
                 continue;
             }
 
-            var direction = (followComponent.target.position - movableComponent.Transform.position).normalized;
-            var distance = Vector3.Distance(followComponent.target.position, movableComponent.Transform.position);
+            var direction = (followComponent.target.position - movableComponent.transform.position).normalized;
+            var distance = Vector3.Distance(followComponent.target.position, movableComponent.transform.position);
             var isMoving = distance > _stopDistance;
 
             if (isMoving)
             {
-                movableComponent.Transform.position += direction * (Time.deltaTime * movableComponent.MoveSpeed);
-                movableComponent.Transform.forward = direction;               
+                movableComponent.transform.position += direction * (Time.deltaTime * movableComponent.moveSpeed);
+
+                movableComponent.transform.forward = direction;
             }
 
-            movableComponent.IsMoving = isMoving;
+            movableComponent.isMoving = isMoving;
             direction.y = 0;
         }
     }

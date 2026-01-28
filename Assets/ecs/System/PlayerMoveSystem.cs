@@ -11,9 +11,12 @@ public class PlayerMoveSystem : IEcsRunSystem
             ref var inputComponent = ref _playerMoveFilter.Get2(entity);
 
             ref var movableComponent = ref _playerMoveFilter.Get1(entity);
-            movableComponent.Transform.position += inputComponent.Direction * (Time.deltaTime * movableComponent.MoveSpeed);
-            movableComponent.Transform.forward = inputComponent.Direction;
-            movableComponent.IsMoving = inputComponent.Direction.sqrMagnitude > 0;
+            movableComponent.transform.position += inputComponent.direction * (Time.deltaTime * movableComponent.moveSpeed);
+
+            if (movableComponent.isMoving = inputComponent.direction.sqrMagnitude > 0)
+            {
+                movableComponent.transform.forward = inputComponent.direction;
+            }
         }
     }
 }

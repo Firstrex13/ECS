@@ -2,7 +2,7 @@ using UnityEngine;
 
 public struct MovableComponent 
 {
-    public Transform Transform;
-    public float MoveSpeed;
-    public bool IsMoving;
+    public Transform transform;
+    public float moveSpeed;
+    public bool isMoving;
 }

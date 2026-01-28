@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   <UnitPrefab>k__BackingField: {fileID: 6228771316407724030, guid: 02380cd4bfb88d94fa0dc4e27555a363, type: 3}
-  <DefaultSpeed>k__BackingField: 1.5
+  <DefaultSpeed>k__BackingField: 2
